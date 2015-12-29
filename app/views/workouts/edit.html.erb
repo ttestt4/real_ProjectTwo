@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<%= form_for @workout do |f| %>
+	<div>
+		<%= f.label :Title %>
+		<%= f.text_field :description %>
+	</div>
+	<div>
+		<%= f.label :Date %>
+		<%= f.text_field :date %>
+		<%=" [YYYY-MM-DD] Format only please"%>
+	</div>
+
+	<div>
+		<%= f.submit %>
+	</div>
+<% end %>
+
+<%= link_to 'Back To All Workouts', index_path %>
+
+
+
+</body>
+</html>

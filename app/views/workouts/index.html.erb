@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<%= favicon_link_tag 'favicon.ico'%>
+	<h1>My Workouts</h1>
+</head>
+<body>
+
+<% @workouts.each do |w| %>
+
+<p>ID #:  <%= w.id %> &nbsp;&nbsp;&nbsp;	
+   DATE:	<%= w.date %>	&nbsp;&nbsp;&nbsp;	
+   TITLE:			<%= w.description %> &nbsp;&nbsp;&nbsp;	 
+   <%= link_to 'Details', workout_path(w.id) %>
+   &nbsp;&nbsp;&nbsp;&nbsp;
+   <%= link_to 'Edit Title or Date', edit_workout_path(w.id) %>
+   &nbsp;&nbsp;&nbsp;&nbsp;
+   <%= link_to 'Delete Workout', workout_path(w.id), method: :delete, data: { confirm: 'Are you sure you permanently delete this workout?'} %>
+   
+   </p> 
+
+<% end %>
+
+<%= link_to 'Add New Workout', new_workout_path %>
+
+<% console %>
+</body>
+</html>

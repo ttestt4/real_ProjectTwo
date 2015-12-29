@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<p> heloooooooo </p>
+
+
+<%= form_for @workout do |f| %>
+	<div>
+		<%= f.label :Title %>
+		<%= f.text_field :description %>
+	</div>
+	<div>
+		<%= f.label :Date %>
+		<%= f.text_field :date %>
+		<%=" [YYYY-MM-DD] Format only please"%>
+	</div>
+
+	<div>
+		<%= f.submit %>
+	</div>
+<% end %>
+
+
+</body>
+</html>
