@@ -28,6 +28,22 @@ class ExercisesController < ApplicationController
 		@exercise = Exercise.find_by_id(params[:id])
 	end
 
+	def edit
+		@workout = Workout.find_by_id(params[:workout_id])
+		@exercise = Exercise.find_by_id(params[:id])
+	end
+
+	def update
+		@workout = Workout.find_by_id(params[:workout_id])
+		@exercise = Exercise.find_by_id(params[:id])
+
+		if @exercise.update_attributes(exercise_params)
+			redirect_to exercises_path(@workout)
+		else
+			render :edit
+		end
+	end
+
 	def destroy
 		@workout = Workout.find_by_id(params[:workout_id])
 		@exercise = Exercise.find_by_id(params[:id])

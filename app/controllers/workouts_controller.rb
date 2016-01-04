@@ -36,6 +36,8 @@ class WorkoutsController < ApplicationController
 
 	def update
 		@workout = Workout.find_by_id(params[:id])
+
+		
 		if @workout.update_attributes(workout_params)
 			redirect_to workout_path(@workout)
 		else

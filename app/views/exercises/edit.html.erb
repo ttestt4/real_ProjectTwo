@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<%= form_for [@exercise] do |f| %>
+	<div>
+		<%= f.label :Comments %>
+		<%= f.text_field :notes %>
+	</div>
+	
+
+	<div>
+		<%= f.submit %>
+	</div>
+<% end %>
+
+<%= link_to 'Back To All Workouts', index_path %>
+
+
+
+</body>
+</html>

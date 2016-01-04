@@ -31,7 +31,9 @@ Rails.application.routes.draw do
 
   get 'workouts/:workout_id/exercises/:id' => 'exercises#show', as: :exercise
 
-  get 'workouts/:workout_id/exercises/:id/edit' => 'exercises#edit'
+  get 'workouts/:workout_id/exercises/:id/edit' => 'exercises#edit', as: :edit_exercise
+
+  patch 'workouts/:workout_id/exercises/:id' => 'exercises#update'
 
 
   delete 'workouts/:workout_id/exercises/:id' => 'exercises#destroy'
