@@ -15,9 +15,11 @@
 <p>
 	ID #:  <%= e.id %> &nbsp;&nbsp;&nbsp;	
    Notes: <%= e.notes %> &nbsp;&nbsp;&nbsp;
+   <%= link_to 'Delete Exercise', exercise_path(@workout, e), method: :delete, data: { confirm: 'Are you sure you permanently delete this exercise?'} %>
 </p> 
 <% end %>
 
+<%= link_to 'Add New Exercise', new_exercise_path %>
 
 
 <% console %>

@@ -23,13 +23,21 @@ Rails.application.routes.draw do
 
   #######################
 
-  get 'workouts/:workout_id/exercises' => 'exercises#index'
+  get 'workouts/:workout_id/exercises/new' => 'exercises#new', as: :new_exercise
 
   post 'workouts/:workout_id/exercises' => 'exercises#create'
 
-  get 'workouts/:workout_id/exercises/new' => 'exercises#new'
+  get 'workouts/:workout_id/exercises' => 'exercises#index', as: :exercises
+
+  get 'workouts/:workout_id/exercises/:id' => 'exercises#show', as: :exercise
 
   get 'workouts/:workout_id/exercises/:id/edit' => 'exercises#edit'
+
+
+  delete 'workouts/:workout_id/exercises/:id' => 'exercises#destroy'
+
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

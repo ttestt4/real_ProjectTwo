@@ -5,5 +5,20 @@
 </head>
 <body>
 THE NEW PAGE
+
+<%= form_for @exercise do |f| %>
+	<div>
+		<%= f.label :Comments %>
+		<%= f.text_field :notes %>
+	</div>
+	
+
+	<div>
+		<%= f.submit %>
+	</div>
+<% end %>
+
+
+<% console %>
 </body>
 </html>

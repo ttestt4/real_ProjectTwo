@@ -12,7 +12,7 @@
 <p>ID #:  <%= w.id %> &nbsp;&nbsp;&nbsp;	
    DATE:	<%= w.date %>	&nbsp;&nbsp;&nbsp;	
    TITLE:			<%= w.description %> &nbsp;&nbsp;&nbsp;	 
-   <%= link_to 'Details', workout_path(w.id) %>
+   <%= link_to 'Details', exercises_path(w.id) %>
    &nbsp;&nbsp;&nbsp;&nbsp;
    <%= link_to 'Edit Title or Date', edit_workout_path(w.id) %>
    &nbsp;&nbsp;&nbsp;&nbsp;
