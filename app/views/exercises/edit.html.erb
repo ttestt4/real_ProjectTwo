@@ -6,9 +6,14 @@
 <body>
 
 
-<%= form_for [@exercise] do |f| %>
+<%= form_for [@workout, @exercise] do |f| %>
 	<div>
-		<%= f.label :Comments %>
+		<%= f.label :'Exercise Name' %>
+		<%= f.text_field :title %>
+	</div>
+
+	<div>
+		<%= f.label :Notes %>
 		<%= f.text_field :notes %>
 	</div>
 	

@@ -38,7 +38,7 @@ class ExercisesController < ApplicationController
 		@exercise = Exercise.find_by_id(params[:id])
 
 		if @exercise.update_attributes(exercise_params)
-			redirect_to exercises_path(@workout)
+			redirect_to workout_exercises_path
 		else
 			render :edit
 		end
@@ -54,7 +54,7 @@ class ExercisesController < ApplicationController
 
 	private
 	def exercise_params
-      params.require(:exercise).permit(:notes)
+      params.require(:exercise).permit(:notes, :title)
     end
 	
 end

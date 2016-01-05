@@ -13,14 +13,15 @@
 
 <% @exercises.each do |e| %>
 <p>
-	ID #:  <%= e.id %> &nbsp;&nbsp;&nbsp;	
-   Notes: <%= e.notes %> &nbsp;&nbsp;&nbsp;
-   <%= link_to 'Edit Exercise', edit_exercise_path(@workout, e) %>
-   <%= link_to 'Delete Exercise', exercise_path(@workout, e), method: :delete, data: { confirm: 'Are you sure you permanently delete this exercise?'} %>
+	ID #:  <%= e.id %> &nbsp;&nbsp;&nbsp; 
+	Title: 	<%= e.title %> &nbsp;&nbsp;&nbsp; 
+   Notes: <%= e.notes %> &nbsp;&nbsp;&nbsp; 
+   <%= link_to 'Edit Exercise', edit_workout_exercise_path(@workout, e) %>
+   <%= link_to 'Delete Exercise', workout_exercise_path(@workout, e), method: :delete, data: { confirm: 'Are you sure you permanently delete this exercise?'} %>
 </p> 
 <% end %>
 
-<%= link_to 'Add New Exercise', new_exercise_path %>
+<%= link_to 'Add New Exercise', new_workout_exercise_path %>
 <br>
 <%= link_to 'Back To All Workouts', index_path %>
 
