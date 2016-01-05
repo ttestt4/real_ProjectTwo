@@ -6,7 +6,7 @@
 <body>
 THE NEW PAGE
 
-<%= form_for @exercise do |f| %>
+<%= form_for [@workout, @exercise] do |f| %>
 
 	<div>
 		<%= f.label :'Exercise Name' %>

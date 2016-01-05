@@ -12,7 +12,7 @@ class ExercisesController < ApplicationController
 		@exercise = @workout.exercises.new(exercise_params)
 
 		if @exercise.save
-			redirect_to exercises_path(@workout)
+			redirect_to workout_exercises_path(@workout)
     	else
       		render :new
    		end
@@ -49,7 +49,7 @@ class ExercisesController < ApplicationController
 		@exercise = Exercise.find_by_id(params[:id])
 
     	@exercise.destroy
-    	redirect_to exercises_path
+    	redirect_to workout_exercises_path
 	end
 
 	private
