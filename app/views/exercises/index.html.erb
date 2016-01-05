@@ -7,14 +7,18 @@
 
 </head>
 <body>
-<p>AYYY BRUH</p>
+<p> <%= @workout.description %>
+&nbsp;&nbsp;&nbsp; 
+	<%= @workout.date %>
+
+</p>
 
 
 
 <% @exercises.each do |e| %>
 <p>
 	ID #:  <%= e.id %> &nbsp;&nbsp;&nbsp; 
-	Title: 	<%= e.title %> &nbsp;&nbsp;&nbsp; 
+	Exercise Name: 	<%= e.title %> &nbsp;&nbsp;&nbsp; 
    Notes: <%= e.notes %> &nbsp;&nbsp;&nbsp; 
    <%= link_to 'Edit Exercise', edit_workout_exercise_path(@workout, e) %>
    <%= link_to 'Delete Exercise', workout_exercise_path(@workout, e), method: :delete, data: { confirm: 'Are you sure you permanently delete this exercise?'} %>

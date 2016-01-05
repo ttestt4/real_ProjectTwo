@@ -7,8 +7,23 @@
 
 
 SEARCH Fo YO Exercize boiiiii
+<br><br><br><br>
+ALL EXERCISES BY DATE:
+<br><br>
 
+<% @exercise.each do |w| %>
 
+<p>Exercise Name:  <%= w.title %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	
+
+   Date:  <%= w.workout.date %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+   Workout: <%= w.workout.description %>	
+ 
+  
+   
+   </p> 
+
+<% end %>
 
 <% console %>
 </body>
