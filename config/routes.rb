@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
   delete 'workouts/:id' => 'workouts#destroy'
 
+  get '/search' => 'workouts#forsearch', as: :search
+
   #######################
 
   get 'workouts/:workout_id/exercises/new' => 'exercises#new', as: :new_workout_exercise

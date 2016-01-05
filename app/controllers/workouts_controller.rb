@@ -51,6 +51,15 @@ class WorkoutsController < ApplicationController
 		redirect_to index_path
 	end
 
+	def forsearch
+		@workout = Workout.all.order('date DESC')
+		@exercise = Exercise.all
+
+		@exercisedesired = #getinput from users here
+
+		@return = Exercise.all.where(title: "#{@exercisedesired}")
+	end
+
 end
 
 private
