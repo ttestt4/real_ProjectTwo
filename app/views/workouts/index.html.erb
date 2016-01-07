@@ -2,10 +2,13 @@
 <html>
 <head>
 	<title></title>
-	<%= favicon_link_tag 'favicon.ico'%>
-	<h1>My Workouts</h1>
 </head>
 <body>
+
+<% if current_user == @user %>
+
+<%= favicon_link_tag 'favicon.ico'%>
+   <h1>My Workouts</h1>
 
 <% @user.workouts.each do |w| %>
 
@@ -25,6 +28,15 @@
 <%= link_to 'Add New Workout', new_user_workout_path %>
 <%= link_to 'Search by Exercise', search_path %>
 
-<% console %>
+<% else %>
+
+<p> You cannot view other users information </p>
+
+
+
+
+<% end %>
+
+
 </body>
 </html>
