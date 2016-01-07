@@ -7,12 +7,14 @@ class WorkoutsController < ApplicationController
 
 
 	def new
-		@workout = Workout.new
-		@user = User.find_by_id(params[:user_id])
+		@user = User.find(params[:user_id])
+		@workout = @user.workouts.new
+		
 	end
 
 	def create
-		  @workout = Workout.new(workout_params)
+		  @user = User.find(params[:user_id])
+		  @workout = @user.workouts.new(workout_params)
 
     if @workout.save
       redirect_to user_workout_path(params[:user_id], @workout)
@@ -23,6 +25,7 @@ class WorkoutsController < ApplicationController
 
 	
 	def index
+		@user = User.find_by_id(params[:user_id])
 		@workouts = Workout.all.order('date DESC')
 	end
 
