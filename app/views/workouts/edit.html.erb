@@ -6,7 +6,7 @@
 <body>
 
 
-<%= form_for @workout do |f| %>
+<%= form_for [@user, @workout] do |f| %>
 	<div>
 		<%= f.label :Description %>
 		<%= f.text_field :description %>
@@ -22,7 +22,7 @@
 	</div>
 <% end %>
 
-<%= link_to 'Back To All Workouts', index_path %>
+<%= link_to 'Back To All Workouts', user_workouts_path %>
 <% console %>
 
 

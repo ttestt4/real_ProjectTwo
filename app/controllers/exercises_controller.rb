@@ -3,6 +3,7 @@ class ExercisesController < ApplicationController
 	
 
 	def new
+		@user = User.find_by_id(params[:user_id])
 		@workout = Workout.find_by_id(params[:workout_id])
 		@exercise = Exercise.new
 	end
@@ -12,7 +13,7 @@ class ExercisesController < ApplicationController
 		@exercise = @workout.exercises.new(exercise_params)
 
 		if @exercise.save
-			redirect_to workout_exercises_path(@workout)
+			redirect_to user_workout_exercises_path(params[:user_id], @workout.id)
     	else
       		render :new
    		end
@@ -29,6 +30,7 @@ class ExercisesController < ApplicationController
 	end
 
 	def edit
+		@user = User.find_by_id(params[:user_id])
 		@workout = Workout.find_by_id(params[:workout_id])
 		@exercise = Exercise.find_by_id(params[:id])
 	end
@@ -38,7 +40,7 @@ class ExercisesController < ApplicationController
 		@exercise = Exercise.find_by_id(params[:id])
 
 		if @exercise.update_attributes(exercise_params)
-			redirect_to workout_exercises_path
+			redirect_to user_workout_exercises_path
 		else
 			render :edit
 		end
@@ -49,7 +51,7 @@ class ExercisesController < ApplicationController
 		@exercise = Exercise.find_by_id(params[:id])
 
     	@exercise.destroy
-    	redirect_to workout_exercises_path
+    	redirect_to user_workout_exercises_path
 	end
 
 	private

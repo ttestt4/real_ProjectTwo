@@ -5,12 +5,14 @@ class SessionsController < ApplicationController
   def create
   	user = User.find_by_email(params[:email])
   	if user && user.authenticate(params[:password])
-  		redirect_to index_path, notice: "congrats!"
+  		redirect_to user_workouts_path(user), notice: "congrats!"
   	else
   		render :new
   	end
   end
 
   def destroy
+  	session[:user_id] = nil
+  	redirect_to root_url, notice: "logged out!"
   end
 end

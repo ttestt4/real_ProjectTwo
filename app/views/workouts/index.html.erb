@@ -12,17 +12,17 @@
 <p>ID #:  <%= w.id %> &nbsp;&nbsp;&nbsp;	
    DATE:	<%= w.date %>	&nbsp;&nbsp;&nbsp;	
    DESCRIPTION:			<%= w.description %> &nbsp;&nbsp;&nbsp;	 
-   <%= link_to 'Details', workout_exercises_path(w.id) %>
+   <%= link_to 'Details', user_workout_exercises_path(params[:user_id], w.id) %>
    &nbsp;&nbsp;&nbsp;&nbsp;
-   <%= link_to 'Edit Description or Date', edit_workout_path(w.id) %>
+   <%= link_to 'Edit Description or Date', edit_user_workout_path(params[:user_id],w.id) %>
    &nbsp;&nbsp;&nbsp;&nbsp;
-   <%= link_to 'Delete Workout', workout_path(w.id), method: :delete, data: { confirm: 'Are you sure you permanently delete this workout?'} %>
+   <%= link_to 'Delete Workout', user_workout_path(params[:user_id],w.id), method: :delete, data: { confirm: 'Are you sure you permanently delete this workout?'} %>
    
    </p> 
 
 <% end %>
 
-<%= link_to 'Add New Workout', new_workout_path %>
+<%= link_to 'Add New Workout', new_user_workout_path %>
 <%= link_to 'Search by Exercise', search_path %>
 
 <% console %>

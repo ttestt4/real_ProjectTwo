@@ -2,16 +2,18 @@ Rails.application.routes.draw do
 
   #SESSIONS
 
-  get 'login' => 'sessions#new', as: :login_form
+   get 'login' => 'sessions#new', as: :login_form
 
-  post 'login' => 'sessions#create'
+   post 'login' => 'sessions#create'
 
-  delete 'sessions' => 'sessions#destroy'
+   delete 'logout' => 'sessions#destroy', as: :sessions
 
-  ##USERS
-  get 'signup' => 'users#new', as: :new_user
+  # ##USERS
+   get '/users/new' => 'users#new', as: :new_user
 
-  post 'signup/' => 'users#create'
+   get '/users' => 'users#index', as: :users
+
+   post '/users' => 'users#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -21,39 +23,48 @@ Rails.application.routes.draw do
 
   root 'workouts#login'
 
-  get '/workouts/new' => 'workouts#new', as: :new_workout
+   get '/users/:user_id/workouts/new' => 'workouts#new', as: :new_user_workout
 
-  post '/workouts' => 'workouts#create'
+   post '/users/:user_id/workouts' => 'workouts#create'
 
-  get '/workouts' => 'workouts#index', as: :index
+   get '/users/:user_id/workouts' => 'workouts#index', as: :user_workouts
 
-  get '/workouts/:id' => 'workouts#show', as: :workout
+   get '/users/:user_id/workouts/:id' => 'workouts#show', as: :user_workout
 
-  get '/workouts/:id/edit' => 'workouts#edit', as: :edit_workout
+   get '/users/:user_id/workouts/:id/edit' => 'workouts#edit', as: :edit_user_workout
 
-  patch 'workouts/:id' => 'workouts#update'
+   patch '/users/:user_id/workouts/:id' => 'workouts#update'
 
-  delete 'workouts/:id' => 'workouts#destroy'
+   delete '/users/:user_id/workouts/:id' => 'workouts#destroy'
 
-  get '/search' => 'workouts#forsearch', as: :search
+   #get '/search' => 'workouts#forsearch', as: :search
+
+   get 'users/:user_id/exercises' => 'workouts#forsearch', as: :search
 
   #######################
 
-  get 'workouts/:workout_id/exercises/new' => 'exercises#new', as: :new_workout_exercise
+   get '/users/:user_id/workouts/:workout_id/exercises/new' => 'exercises#new', as: :new_user_workout_exercise
 
-  post 'workouts/:workout_id/exercises' => 'exercises#create'
+   post '/users/:user_id/workouts/:workout_id/exercises' => 'exercises#create'
 
-  get 'workouts/:workout_id/exercises' => 'exercises#index', as: :workout_exercises
+   get '/users/:user_id/workouts/:workout_id/exercises/' => 'exercises#index', as: :user_workout_exercises
 
-  get 'workouts/:workout_id/exercises/:id' => 'exercises#show', as: :workout_exercise
+   get '/users/:user_id/workouts/:workout_id/exercises/:id' => 'exercises#show', as: :user_workout_exercise
 
-  get 'workouts/:workout_id/exercises/:id/edit' => 'exercises#edit', as: :edit_workout_exercise
+   get '/users/:user_id/workouts/:workout_id/exercises/:id/edit' => 'exercises#edit', as: :edit_user_workout_exercise
 
-  patch 'workouts/:workout_id/exercises/:id' => 'exercises#update'
+   patch '/users/:user_id/workouts/:workout_id/exercises/:id' => 'exercises#update'
 
 
-  delete 'workouts/:workout_id/exercises/:id' => 'exercises#destroy'
+   delete '/users/:user_id/workouts/:workout_id/exercises/:id' => 'exercises#destroy'
 
+
+ # resources :users do
+ #   resources :workouts do 
+  #    resources :exercises do 
+  #    end
+  #  end
+  #end
 
 
 
