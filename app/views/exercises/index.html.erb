@@ -7,6 +7,11 @@
 
 </head>
 <body>
+
+<% if current_user != @user %>
+   <p> You cannot view other users information </p>
+<% else %>
+
 <p> <%= @workout.description %>
 &nbsp;&nbsp;&nbsp; 
 	<%= @workout.date %>
@@ -25,10 +30,12 @@
 </p> 
 <% end %>
 
+
 <%= link_to 'Add New Exercise', new_user_workout_exercise_path(params[:user_id], @workout.id) %>
 <br>
 <%= link_to 'Back To All Workouts', user_workouts_path %>
 
+<%end%>
 
 <% console %>
 </body>

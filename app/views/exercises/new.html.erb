@@ -4,6 +4,11 @@
 	<title></title>
 </head>
 <body>
+
+<% if current_user != @user %>
+   <p> You cannot view other users information </p>
+<% else %>
+
 THE NEW PAGE
 
 <%= form_for [@user, @workout, @exercise] do |f| %>
@@ -26,5 +31,6 @@ THE NEW PAGE
 
 <%= link_to 'Back To All Exercises', user_workout_exercises_path %>
 <% console %>
+<%end%>
 </body>
 </html>

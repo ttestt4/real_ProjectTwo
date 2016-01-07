@@ -20,6 +20,7 @@ class ExercisesController < ApplicationController
 	end
 
 	def index
+		@user = User.find_by_id(params[:user_id])
 		@workout = Workout.find_by_id(params[:workout_id])
 		@exercises = @workout.exercises.all
 	end

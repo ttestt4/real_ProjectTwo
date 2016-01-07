@@ -4,6 +4,11 @@
 	<title></title>
 </head>
 <body>
+
+<% if current_user != @user %>
+   <p> You cannot view other users information </p>
+<% else %>
+
 <p> heloooooooo </p>
 
 
@@ -21,6 +26,7 @@
 	<div>
 		<%= f.submit %>
 	</div>
+<% end %>
 <% end %>
 
 <%= link_to 'Back To All Workouts', user_workouts_path %>
