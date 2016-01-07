@@ -30,6 +30,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+gem 'carrierwave'
+
+gem 'carrierwave-video'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
