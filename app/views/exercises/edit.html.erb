@@ -5,9 +5,7 @@
 </head>
 <body>
 
-<% if current_user != @user %>
-   <p> You cannot view other users information </p>
-<% else %>
+
 
 
 <%= form_for [@user, @workout, @exercise] do |f| %>
@@ -21,12 +19,16 @@
 		<%= f.text_field :notes %>
 	</div>
 	
+		<div>
+		<%=f.label :Video %>
+		<%=f.file_field :video%>
+	</div>
 
 	<div>
 		<%= f.submit %>
 	</div>
 <% end %>
-<% end %>
+
 
 <%= link_to 'Back To All Exercises', user_workout_exercises_path %>
 

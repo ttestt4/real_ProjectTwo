@@ -12,11 +12,11 @@ class ExercisesController < ApplicationController
 		@workout = Workout.find_by_id(params[:workout_id])
 		@exercise = @workout.exercises.new(exercise_params)
 
-		if @exercise.save
-			redirect_to user_workout_exercises_path(params[:user_id], @workout.id)
-    	else
-      		render :new
-   		end
+		#raise @exercise.inspect
+		@exercise.save
+
+		redirect_to root_path#(params[:user_id], @workout.id)
+    	
 	end
 
 	def index
@@ -57,7 +57,7 @@ class ExercisesController < ApplicationController
 
 	private
 	def exercise_params
-      params.require(:exercise).permit(:notes, :title)
+      params.require(:exercise).permit(:notes, :title, :video)
     end
 	
 end

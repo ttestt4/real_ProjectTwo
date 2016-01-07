@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 class VideoUploader < CarrierWave::Uploader::Base
+  #storage :file
 
 include CarrierWave::Video
 
@@ -16,6 +17,7 @@ include CarrierWave::Video
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
+    #{}"public/upload/exercise/video"
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
@@ -53,7 +55,7 @@ include CarrierWave::Video
   end
 
   class Video
-  mount_uploader :file, VideoUploader
+  #mount_uploader :file, VideoUploader
 
     def set_success(format, opts)
       self.success = true

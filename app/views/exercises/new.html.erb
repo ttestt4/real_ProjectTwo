@@ -5,9 +5,7 @@
 </head>
 <body>
 
-<% if current_user != @user %>
-   <p> You cannot view other users information </p>
-<% else %>
+
 
 THE NEW PAGE
 
@@ -23,6 +21,10 @@ THE NEW PAGE
 		<%= f.text_field :notes %>
 	</div>
 	
+	<div>
+		<%=f.label :Video %>
+		<%=f.file_field :video%>
+	</div>
 
 	<div>
 		<%= f.submit %>
@@ -31,6 +33,6 @@ THE NEW PAGE
 
 <%= link_to 'Back To All Exercises', user_workout_exercises_path %>
 <% console %>
-<%end%>
+
 </body>
 </html>
