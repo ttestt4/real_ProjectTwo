@@ -5,6 +5,13 @@
 </head>
 <body>
 
+<% if current_user != @user %>
+   <p> You cannot view other users information </p>
+<% else %>
+
+<% if current_user != @user %>
+   <p> You cannot view other users information </p>
+<% else %>
 
 SEARCH Fo YO Exercize boiiiii
 <br><br><br><br>
@@ -29,7 +36,11 @@ ALL EXERCISES BY DATE:
    </p> 
 
 <% end %>
+<% end %>
+
+<%= link_to 'Back To All Workouts', user_workouts_path %>
 
 <% console %>
+<%end%>
 </body>
 </html>

@@ -8,6 +8,23 @@
 </head>
 <body>
 
+<%= flash[:notice] %>
+
+<% if current_user %>
+  <p> hello, <%= current_user.email %> </p>
+  <%= link_to 'Logout', sessions_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'} %>
+<% else %>
+  
+<div>
+  Please <%= link_to 'Login', login_form_path %>
+<br>
+  Or <%= link_to 'Sign Up', new_user_path %>
+
+
+  </div>
+<% end %>
+
+
 <%= yield %>
 
 </body>

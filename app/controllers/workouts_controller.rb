@@ -1,4 +1,5 @@
 class WorkoutsController < ApplicationController
+	before_action :authenticate
 
 	def login
 
@@ -6,14 +7,17 @@ class WorkoutsController < ApplicationController
 
 
 	def new
-		@workout = Workout.new
+		@user = User.find(params[:user_id])
+		@workout = @user.workouts.new
+		
 	end
 
 	def create
-		  @workout = Workout.new(workout_params)
+		  @user = User.find(params[:user_id])
+		  @workout = @user.workouts.new(workout_params)
 
     if @workout.save
-      redirect_to workout_path(@workout)
+      redirect_to user_workout_path(params[:user_id], @workout)
     else
       render :new
     end
@@ -21,16 +25,19 @@ class WorkoutsController < ApplicationController
 
 	
 	def index
+		@user = User.find_by_id(params[:user_id])
 		@workouts = Workout.all.order('date DESC')
 	end
 
 	def show
+		@user = User.find_by_id(params[:user_id])
 		@workout = Workout.find_by_id(params[:id])
 		
 	end
 
 
 	def edit
+		@user = User.find_by_id(params[:user_id])
 		@workout = Workout.find_by_id(params[:id])
 	end
 
@@ -39,7 +46,7 @@ class WorkoutsController < ApplicationController
 
 		
 		if @workout.update_attributes(workout_params)
-			redirect_to workout_path(@workout)
+			redirect_to user_workout_path(params[:user_id], @workout.id)
 		else
 			render :edit
 		end
@@ -48,12 +55,13 @@ class WorkoutsController < ApplicationController
 	def destroy
 		@workout = Workout.find_by_id(params[:id])
 		@workout.destroy
-		redirect_to index_path
+		redirect_to user_workouts_path
 	end
 
 	def forsearch
 		@workout = Workout.all.order('date DESC')
 		@exercise = Exercise.all
+		@user = User.find_by_id(params[:user_id])
 
 		@exercisedesired = #getinput from users here
 
