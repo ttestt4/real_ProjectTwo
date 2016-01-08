@@ -9,17 +9,16 @@
    <p> You cannot view other users information </p>
 <% else %>
 
-<% if current_user != @user %>
-   <p> You cannot view other users information </p>
-<% else %>
-
-SEARCH Fo YO Exercize boiiiii
-<br><br><br><br>
-
-<%= Exercise.all.where(title: "HSPU") %>
+<h1>
 
 
-<br><br><br><br>
+
+Search by Exercise
+<br>
+<%#= Exercise.all.where(title: "HSPU") %>
+</h1>
+
+
 ALL EXERCISES BY DATE:
 <br><br>
 
@@ -36,11 +35,13 @@ ALL EXERCISES BY DATE:
    </p> 
 
 <% end %>
+
+
 <% end %>
 
 <%= link_to 'Back To All Workouts', user_workouts_path %>
 
 <% console %>
-<%end%>
+
 </body>
 </html>

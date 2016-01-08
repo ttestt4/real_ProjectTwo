@@ -1,31 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <title>RealProjecttwo</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= flash[:notice] %>
-
-<% if current_user %>
-  <p> hello, <%= current_user.email %> </p>
-  <%= link_to 'Logout', sessions_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'} %>
-<% else %>
-  
-<div>
-  Please <%= link_to 'Login', login_form_path %>
-<br>
-  Or <%= link_to 'Sign Up', new_user_path %>
+<%= render 'layouts/nav' %>
+<%= render 'layouts/flash' %>
 
 
+<div class="container">
+  <div class="col-sm-offset-3">
+    <%= yield %>
   </div>
-<% end %>
-
-
-<%= yield %>
+</div>
 
 </body>
 </html>

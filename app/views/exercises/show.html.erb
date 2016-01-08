@@ -8,8 +8,19 @@
 <% if current_user != @user %>
    <p> You cannot view other users information </p>
 <% else %>
+<br><br>
+<%#= video_tag @exercise.video, :controls =>true %>
 
+<%=video_tag(@exercise.video_url.to_s, size: "250x200", controls: true, autoplay: true, preload: "auto", :autobuffer => true)%>
+
+<br><br>
 not sure if this view for show is important at all
+<br><br>
+<%#raise @exercise.inspect %>
+<%= @exercise.video_url %>
+
+
+<%console%>
 <% end %>
 </body>
 </html>

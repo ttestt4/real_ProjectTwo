@@ -1,42 +1,43 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
 
-	<%= params %>
-
-</head>
-<body>
 
 <% if current_user != @user %>
    <p> You cannot view other users information </p>
 <% else %>
 
-<p> <%= @workout.description %>
-&nbsp;&nbsp;&nbsp; 
-	<%= @workout.date %>
-
-</p>
 
 
 
-<% @exercises.each do |e| %>
-<p>
-	ID #:  <%= e.id %> &nbsp;&nbsp;&nbsp; 
-	Exercise Name: 	<%= e.title %> &nbsp;&nbsp;&nbsp; 
-   Notes: <%= e.notes %> &nbsp;&nbsp;&nbsp; 
-   <%= link_to 'Edit Exercise', edit_user_workout_exercise_path(params[:user_id], @workout.id, e.id) %>
-   <%= link_to 'Delete Exercise', user_workout_exercise_path(params[:user_id], @workout.id, e.id), method: :delete, data: { confirm: 'Are you sure you permanently delete this exercise?'} %>
-</p> 
-<% end %>
 
-
-<%= link_to 'Add New Exercise', new_user_workout_exercise_path(params[:user_id], @workout.id) %>
+	<h1> <%= @workout.description %>
+	<br>
+		<%= @workout.date %>
+	</h1>
+<br><br>
+	<h2>
+		<%= link_to 'Add New Exercise', new_user_workout_exercise_path(params[:user_id], @workout.id) %>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<%= link_to 'Back To All Workouts', user_workouts_path %>
+	</h2>
 <br>
-<%= link_to 'Back To All Workouts', user_workouts_path %>
+	<% @exercises.each do |e| %>
+	<p>
+		ID #:  <%= e.id %> &nbsp;&nbsp;&nbsp; 
+		Exercise Name: 	<%= e.title %> &nbsp;&nbsp;&nbsp; 
+   	<br>
+  		<%= video_tag e.video_url.to_s, :controls =>true %>
+   		<!-- video_tag("trailer.ogg", controls: true, autobuffer: true) -->
+   		<br>
+   		Notes: <%= e.notes %> &nbsp;&nbsp;&nbsp; 
+   	<br>
+   		<%= link_to 'Edit Exercise', edit_user_workout_exercise_path(params[:user_id], @workout.id, e.id) %>
+   		<%= link_to 'Delete Exercise', user_workout_exercise_path(params[:user_id], @workout.id, e.id), method: :delete, data: { confirm: 'Are you sure you permanently delete this exercise?'} %>
+   	<br><br>
+	</p> 
+	<% end %>
+
+
+
+
+
 
 <%end%>
-
-<% console %>
-</body>
-</html>

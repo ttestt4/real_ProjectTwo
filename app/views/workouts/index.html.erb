@@ -11,7 +11,14 @@
 
 <%= favicon_link_tag 'favicon.ico'%>
    <h1>My Workouts</h1>
-
+   
+   <h2>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<%= link_to 'Add New Workout', new_user_workout_path %>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<%= link_to 'Search by Exercise', search_path %> 
+</h2>
+<br>
 <% @user.workouts.each do |w| %>
 
 <p>ID #:  <%= w.id %> &nbsp;&nbsp;&nbsp;	
@@ -27,8 +34,13 @@
 
 <% end %>
 
-<%= link_to 'Add New Workout', new_user_workout_path %>
-<%= link_to 'Search by Exercise', search_path %>
+
+
+
+
+
+
+
 
 
 
