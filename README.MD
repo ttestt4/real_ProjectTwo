@@ -4,7 +4,7 @@
 For this application the primary technologies used were ruby, rails, hmtl, css, bootstrap, git, github, heroku, and gems 'carrierwave', 'carrierwave-video', 'b-crypt'.
 
 ##Approach Taken
-I want my projects to have a purpose and solve a problem. Essentially be functional, rather than only meeting the requirements. This idea is a simple one that could solve a problem for many fitness enthusiasts incluing myself. The idea is you can film your workouts and upload videos to the app. Next to the video you can leave comments critiquing your form. Over time you can watch your videos and improve on your form. You can view your workouts and the exercises contained, or just search the entire database of all exercises.
+I want my projects to have a purpose and solve a problem. Essentially be functional, rather than only meeting the requirements. I almost got there with this one. This idea is a simple one that could solve a problem for many fitness enthusiasts incluing myself. The idea is you can film your workouts and upload videos to the app. Next to the video you can leave comments critiquing your form. Over time you can watch your videos and improve on your form. You can view your workouts and the exercises contained, or just search the entire database of all exercises.
 
 I did my best to take the simplest approach possible. I first drew out my wireframes so I could implement a planned structure rather than building on the fly. I first made workouts model which had many exercises. This made implementing users a bit hard because I had to insert the users model in fornt of workouts. I.e useres have many workouts have many exercises.
 
