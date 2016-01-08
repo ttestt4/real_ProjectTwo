@@ -12,30 +12,41 @@
    <p> You cannot view other users information </p>
 <% else %>
 
-<p> <%= @workout.description %>
-&nbsp;&nbsp;&nbsp; 
-	<%= @workout.date %>
-
-</p>
+<div class="container">
+	<div class="row row-centered">
 
 
+	<p class="col-xs-12 col-centered" > <%= @workout.description %>
+	&nbsp;&nbsp;&nbsp; 
+		<%= @workout.date %>
 
-<% @exercises.each do |e| %>
-<p>
-	ID #:  <%= e.id %> &nbsp;&nbsp;&nbsp; 
-	Exercise Name: 	<%= e.title %> &nbsp;&nbsp;&nbsp; 
-   Notes: <%= e.notes %> &nbsp;&nbsp;&nbsp; 
-   Video: <%= video_tag e.video_url.to_s, :controls =>true %>
-   <!-- video_tag("trailer.ogg", controls: true, autobuffer: true) -->
-   <%= link_to 'Edit Exercise', edit_user_workout_exercise_path(params[:user_id], @workout.id, e.id) %>
-   <%= link_to 'Delete Exercise', user_workout_exercise_path(params[:user_id], @workout.id, e.id), method: :delete, data: { confirm: 'Are you sure you permanently delete this exercise?'} %>
-</p> 
-<% end %>
+	</p>
 
+	<p class="col-xs-12 col-centered" >
+		<%= link_to 'Add New Exercise', new_user_workout_exercise_path(params[:user_id], @workout.id) %>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<%= link_to 'Back To All Workouts', user_workouts_path %>
+	</p>
 
-<%= link_to 'Add New Exercise', new_user_workout_exercise_path(params[:user_id], @workout.id) %>
-<br>
-<%= link_to 'Back To All Workouts', user_workouts_path %>
+	<% @exercises.each do |e| %>
+	<p class="col-xs-12 col-centered">
+		ID #:  <%= e.id %> &nbsp;&nbsp;&nbsp; 
+		Exercise Name: 	<%= e.title %> &nbsp;&nbsp;&nbsp; 
+   		Notes: <%= e.notes %> &nbsp;&nbsp;&nbsp; 
+   	<br>
+  		<%= video_tag e.video_url.to_s, :controls =>true %>
+   		<!-- video_tag("trailer.ogg", controls: true, autobuffer: true) -->
+   	<br>
+   		<%= link_to 'Edit Exercise', edit_user_workout_exercise_path(params[:user_id], @workout.id, e.id) %>
+   		<%= link_to 'Delete Exercise', user_workout_exercise_path(params[:user_id], @workout.id, e.id), method: :delete, data: { confirm: 'Are you sure you permanently delete this exercise?'} %>
+   	<br>
+	</p> 
+	<% end %>
+
+	</div>
+
+</div>
+
 
 <%end%>
 
