@@ -9,7 +9,6 @@
    <p> You cannot view other users information </p>
 <% else %>
 
-<p> heloooooooo </p>
 
 
 <%= form_for [@user, @workout] do |f| %>
@@ -20,9 +19,9 @@
 	<div>
 		<%= f.label :Date %>
 		<%= f.text_field :date %>
-		<%=" [YYYY-MM-DD] Format only please"%>
+		
 	</div>
-
+ [YYYY-MM-DD] Format only please
 	<div>
 		<%= f.submit %>
 	</div>
