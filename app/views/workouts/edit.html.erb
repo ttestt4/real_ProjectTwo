@@ -1,35 +1,34 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
+
+
 
 <% if current_user != @user %>
    <p> You cannot view other users information </p>
 <% else %>
 
-<%= form_for [@user, @workout] do |f| %>
-	<div>
-		<%= f.label :Description %>
-		<%= f.text_field :description %>
-	</div>
-	<div>
-		<%= f.label :Date %>
-		<%= f.text_field :date %>
-		
-	</div>
-[YYYY-MM-DD] Format only please
+<h1>EDIT WORKOUT</h1>
 
-	<div>
-		<%= f.submit %>
+
+<div class="row">
+
+<%= form_for [@user, @workout], :html => {:class => "form-horizontal col-sm-4"} do |f| %>
+<hr>
+	<div class="form-group">
+		<%= f.label :Description %>
+		<%= f.text_field :description, :class=>"form-control"  %>
+	</div>
+	<div class="form-group">
+		<%= f.label :Date %>
+		<%= f.text_field :date, :class=>"form-control"  %>
+		[YYYY-MM-DD] Format only please
+	</div>
+
+
+	<div class="form-group">
+		<%= f.submit "UPDATE WORKOUT", :class => "btn btn-primary"%>
 	</div>
 <% end %>
 <% end %>
+
+</div>
 
 <%= link_to 'Back To All Workouts', user_workouts_path %>
-<% console %>
-
-
-</body>
-</html>

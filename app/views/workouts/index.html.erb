@@ -10,18 +10,18 @@
 <% else %>
 
 <%= favicon_link_tag 'favicon.ico'%>
-   <h1 class="col-md-12">My Workouts</h1>
+   <h1>My Workouts</h1>
    
-   <p class="col-md-12">
+   <h2>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <%= link_to 'Add New Workout', new_user_workout_path %>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <%= link_to 'Search by Exercise', search_path %> 
-</p>
-
+</h2>
+<br>
 <% @user.workouts.each do |w| %>
 
-<p class="col-md-12">ID #:  <%= w.id %> &nbsp;&nbsp;&nbsp;	
+<p>ID #:  <%= w.id %> &nbsp;&nbsp;&nbsp;	
    DATE:	<%= w.date %>	&nbsp;&nbsp;&nbsp;	
    DESCRIPTION:			<%= w.description %> &nbsp;&nbsp;&nbsp;	 
    <%= link_to 'Details', user_workout_exercises_path(params[:user_id], w.id) %>
