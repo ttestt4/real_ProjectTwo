@@ -9,13 +9,14 @@ class ExercisesController < ApplicationController
 	end
 
 	def create
+		@user = User.find_by_id(params[:user_id])
 		@workout = Workout.find_by_id(params[:workout_id])
 		@exercise = @workout.exercises.new(exercise_params)
 
 		#raise @exercise.inspect
 		@exercise.save
 
-		redirect_to root_path#(params[:user_id], @workout.id)
+		redirect_to user_workout_exercises_path(params[:user_id], @workout.id)
     	
 	end
 
@@ -26,6 +27,7 @@ class ExercisesController < ApplicationController
 	end
 
 	def show
+		@user = User.find_by_id(params[:user_id])
 		@workout = Workout.find_by_id(params[:workout_id])
 		@exercise = Exercise.find_by_id(params[:id])
 	end
