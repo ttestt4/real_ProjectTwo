@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
 
-</head>
-<body>
 
 <% if current_user != @user %>
    <p> You cannot view other users information </p>
 <% else %>
 
-<%= params %>
+<h1>
 <br>
 TITLE &nbsp;&nbsp;&nbsp;  <%= @workout.description %>
 <br>
@@ -19,6 +13,5 @@ DATE  &nbsp;&nbsp;&nbsp; <%= @workout.date %>
 <br>
 <%= link_to 'Back To All Workouts', user_workouts_path %>
 <% console %>
-</body>
+</h1>
 <% end %>
-</html>
