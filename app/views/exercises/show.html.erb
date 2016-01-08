@@ -11,16 +11,16 @@
 <br><br>
 <%#= video_tag @exercise.video, :controls =>true %>
 
-<%=video_tag(@exercise.video, size: "250x200", controls: true, autoplay: true, preload: "auto", :autobuffer => true)%>
+<%=video_tag(@exercise.video_url.to_s, size: "250x200", controls: true, autoplay: true, preload: "auto", :autobuffer => true)%>
 
 <br><br>
 not sure if this view for show is important at all
 <br><br>
 <%#raise @exercise.inspect %>
-<%= @exercise.video %>
+<%= @exercise.video_url %>
 
 
-
+<%console%>
 <% end %>
 </body>
 </html>
