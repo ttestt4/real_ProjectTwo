@@ -29,6 +29,34 @@ EZ wider
 <br><br>
 <%#raise @exercise.inspect %>
 <%= @exercise.video_url %>
+Exercise Name: 	<%= @exercise.title %>
+<br>
+Video String: <%= @exercise.video %>
+<br>
+Notes: <%= @exercise.notes %>
+
+<div class="row">
+
+<%= form_for [@user, @workout, @exercise], :html => {:class => "form-horizontal col-sm-4"} do |f| %>
+<hr>	
+	<div class="form-group">
+		<%=f.label :VideoString %>
+		<%=f.text_field :video, :class=>"form-control"%>
+	</div>
+
+	<div class="form-group">
+		<%= f.submit "Save Video", :class => "btn btn-primary" %>
+	</div>
+<% end %>
+
+</div>
+
+
+
+
+
+
+
 
 
 <%console%>
