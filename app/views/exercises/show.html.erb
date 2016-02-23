@@ -15,10 +15,12 @@
 <script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script>
 
 <input type="filepicker" data-fp-apikey="AysFbrFv9RtOQ6HSKt0OFz"
-onchange="alert(event.fpfile.url)">
+onchange="document.getElementById('exercise-video').src=event.fpfile.url">
 
+<!-- document.getElementById('exercise-video').src=event.fpfile.url;console.log('src is ' + document.getElementById('exercise-video').src)) -->
+<!-- console.log(event.fpfile.url) -->
 
-<video src="https://cdn.filestackcontent.com/xhZmwD78RJatR77jluuM" controls>
+<video id="exercise-video" src="" controls>
 </video>
 
 <br><br>
