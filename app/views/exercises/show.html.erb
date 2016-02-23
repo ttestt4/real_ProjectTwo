@@ -10,11 +10,20 @@
 <% else %>
 <br><br>
 <%#= video_tag @exercise.video, :controls =>true %>
+<%#=video_tag(@exercise.video_url.to_s, size: "250x200", controls: true, autoplay: true, preload: "auto", :autobuffer => true)%>
 
-<%=video_tag(@exercise.video_url.to_s, size: "250x200", controls: true, autoplay: true, preload: "auto", :autobuffer => true)%>
+<script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script>
+
+<input type="filepicker" data-fp-apikey="AysFbrFv9RtOQ6HSKt0OFz"
+onchange="alert(event.fpfile.url)">
+
+
+<video src="https://cdn.filestackcontent.com/xhZmwD78RJatR77jluuM" controls>
+</video>
 
 <br><br>
 not sure if this view for show is important at all
+EZ wider
 <br><br>
 <%#raise @exercise.inspect %>
 <%= @exercise.video_url %>
