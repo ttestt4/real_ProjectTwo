@@ -22,10 +22,12 @@
 	<% @exercises.each do |e| %>
 	<p>
 		ID #:  <%= e.id %> &nbsp;&nbsp;&nbsp; 
+		<br>
+		
+	<video src="<%= e.video %>" controls></video>
+
 		Exercise Name: 	<%= e.title %> &nbsp;&nbsp;&nbsp; 
-   	<br>
-  		VIDEOstring: <%= e.video%>
-   		<!-- video_tag("trailer.ogg", controls: true, autobuffer: true) -->
+  
    		<br>
    		Notes: <%= e.notes %> &nbsp;&nbsp;&nbsp; 
    	<br>

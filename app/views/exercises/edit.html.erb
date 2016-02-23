@@ -20,6 +20,16 @@
 		<%=f.text_field :video, :class=>"form-control"%>
 	</div>
 
+	<script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script>
+
+		<input type="filepicker" data-fp-apikey="AysFbrFv9RtOQ6HSKt0OFz"
+		onchange="document.getElementById('exercise-video').src=event.fpfile.url;document.getElementById('pipeme').value=event.fpfile.url">
+
+
+
+		<video id="exercise-video" src="" controls>
+												</video>
+
 	<div class="form-group">
 		<%= f.submit "UPDATE EXERCISE", :class => "btn btn-primary"%>
 	</div>

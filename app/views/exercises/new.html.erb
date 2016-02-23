@@ -17,8 +17,18 @@
 	
 	<div class="form-group">
 		<%=f.label :Video %>
-		<%=f.text_field :video, :class=>"form-control"%>
+		<%=f.text_field :video, :class=>"form-control", :id=>"pipeme"%>
 	</div>
+
+	<script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script>
+
+		<input type="filepicker" data-fp-apikey="AysFbrFv9RtOQ6HSKt0OFz"
+		onchange="document.getElementById('exercise-video').src=event.fpfile.url;document.getElementById('pipeme').value=event.fpfile.url">
+
+
+
+		<video id="exercise-video" src="" controls>
+												</video>
 
 
 
