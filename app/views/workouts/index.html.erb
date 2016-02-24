@@ -19,7 +19,7 @@
 <%= link_to 'Search by Exercise', search_path %> 
 </h2>
 <br>
-<% @user.workouts.each do |w| %>
+<% @user.workouts.order('date DESC').each do |w| %>
 
 <p>ID #:  <%= w.id %> &nbsp;&nbsp;&nbsp;	
    DATE:	<%= w.date %>	&nbsp;&nbsp;&nbsp;	
