@@ -22,19 +22,22 @@ All My Exercises
 ALL EXERCISES BY CREATION DATE:
 <br><br>
 <p> Exercise Name &nbsp;&nbsp;&nbsp;&nbsp; || &nbsp;&nbsp;&nbsp;&nbsp; Workout Description</p>
-<% @user.workouts.order('date DESC').each do |w| %>
-<!-- @user.workouts.find_by_id(7).exercises -->
-<p>
-		
-   	Workout: <%= w.description %>	<%= link_to 'Details', user_workout_exercises_path(params[:user_id], w.id) %>
- 			<br>
-   	<% w.exercises.each do |f| %>
-   	<%= f.title   %>
-   	<br>
-  
-   <% end %>
-   
+<% @exercise.each do |w| %>
 
+<p>
+
+		<a href="">
+	Exercise Name:  <%= w.title %> <%= w.id %> 
+		</a>
+
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+			
+   	Workout: <%= w.workout.description %>	<%= w.workout.id %>
+ 			
+ 	<%= link_to 'Details', user_workout_exercises_path(params[:user_id], w.workout.id) %>
+  
+   
    </p> 
 
 <% end %>
