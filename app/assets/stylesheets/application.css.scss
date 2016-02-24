@@ -23,6 +23,11 @@
 	max-height: 485px;
 }
 
+.shrink {
+	max-width: 425px;
+	height: auto;
+}
+
 .video-size {
 	width: 100%;
     height: auto;
@@ -35,5 +40,9 @@
 	text-align: center;
 }
 
+.res-ponsive {
+	margin: auto;
+	width: 100%
+}
 
 

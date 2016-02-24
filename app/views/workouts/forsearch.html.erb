@@ -23,7 +23,7 @@ Exercise View
 <!-- @user.workouts.find_by_id(7).exercises -->
 <p>
 		
-   	Workout: <%= w.description %>	<%= link_to 'Details', user_workout_exercises_path(params[:user_id], w.id) %>
+   	Workout: <strong><%= w.description %></strong>	<%= link_to 'Details', user_workout_exercises_path(params[:user_id], w.id) %>
  			<br>
 
    	<% w.exercises.each do |f| %>
@@ -41,7 +41,7 @@ Exercise View
 
 <% end %>
 
-<%= link_to 'Back To My Workouts', user_workouts_path %>
+<%= link_to 'Back To My Workouts', user_workouts_path, :class => "btn btn-primary" %>
 
 <% console %>
 
