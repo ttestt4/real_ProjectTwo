@@ -10,27 +10,34 @@
 <% else %>
 
 <%= favicon_link_tag 'favicon.ico'%>
-   <h1>My Workouts</h1>
+
+   <h1><i>My Workouts</i></h1>
    
-   <h2>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <h3>
 <%= link_to 'Add Workout', new_user_workout_path %>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <%= link_to 'Exercise View', search_path %> 
-</h2>
-<br>
-<% @user.workouts.order('date DESC').each do |w| %>
+</h3>
 
-<p>ID #:  <%= w.id %> &nbsp;&nbsp;&nbsp;	
-   DATE:	<%= w.date %>	&nbsp;&nbsp;&nbsp;	
-   DESCRIPTION:			<%= w.description %> &nbsp;&nbsp;&nbsp;	 
+<% @user.workouts.order('date DESC').each do |w| %>
+<br>
+<h4>
+   <div class="col-md-5">
+   <%= w.date %>	&nbsp;&nbsp;&nbsp;	
+   <%= w.description %> &nbsp;&nbsp;&nbsp;
+   </div>
+   <div class="col-md-7">	 
    <%= link_to 'Details', user_workout_exercises_path(params[:user_id], w.id) %>
    &nbsp;&nbsp;&nbsp;&nbsp;
    <%= link_to 'Edit Description or Date', edit_user_workout_path(params[:user_id],w.id) %>
    &nbsp;&nbsp;&nbsp;&nbsp;
    <%= link_to 'Delete Workout', user_workout_path(params[:user_id],w.id), method: :delete, data: { confirm: 'Are you sure you permanently delete this workout?'} %>
-   
-   </p> 
+   </div>
+   <br>
+   <br>
+ 
+
+   </h4> 
 
 <% end %>
 

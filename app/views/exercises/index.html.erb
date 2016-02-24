@@ -8,16 +8,17 @@
 
 
 
-	<h1> <%= @workout.description %>
+	<h1><i><%= @workout.description %>
 	<br>
 		<%= @workout.date %>
+	</i>
 	</h1>
-<br><br>
-	<h2>
+
+	<h3>
 		<%= link_to 'Add Exercise', new_user_workout_exercise_path(params[:user_id], @workout.id) %>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<%= link_to 'Back To My Workouts', user_workouts_path %>
-	</h2>
+	</h3>
 <br>
 	<% @exercises.each do |e| %>
 	<p>
@@ -27,13 +28,13 @@
 <div class="re-size">		
 	<video src="<%= e.video %>" class="video-size" controls></video>
 	<div class="center-text">
-		Exercise Name: 	<%= e.title %> &nbsp;&nbsp;&nbsp; 
+		<%= e.title %> &nbsp;&nbsp;&nbsp; 
 
    		<br>
-   		Notes: <%= e.notes %> &nbsp;&nbsp;&nbsp; 
+   		<%= e.notes %> &nbsp;&nbsp;&nbsp; 
    	<br>
-   		<%= link_to 'Edit Exercise', edit_user_workout_exercise_path(params[:user_id], @workout.id, e.id) %>
-   		<%= link_to 'Delete Exercise', user_workout_exercise_path(params[:user_id], @workout.id, e.id), method: :delete, data: { confirm: 'Are you sure you permanently delete this exercise?'} %>
+   		<%= link_to 'Edit Exercise', edit_user_workout_exercise_path(params[:user_id], @workout.id, e.id), :class => "btn btn-info" %>
+   		<%= link_to 'Delete Exercise', user_workout_exercise_path(params[:user_id], @workout.id, e.id), method: :delete, data: { confirm: 'Are you sure you permanently delete this exercise?'}, :class => "btn btn-danger" %>
    	<br><br>
 	</p> 
 	<% end %>

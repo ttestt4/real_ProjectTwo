@@ -18,7 +18,7 @@
 @import "bootstrap";
 
 .re-size {
-	background-color: red;
+
 	max-width: 855px;
 	max-height: 485px;
 }
@@ -38,6 +38,14 @@
 
 .center-text {
 	text-align: center;
+}
+
+.right {
+	float:right;
+}
+
+.left {
+	float:left;
 }
 
 .res-ponsive {

@@ -3,8 +3,14 @@
 <div class="jumbotron">
 
 <% if current_user %>
-  <p> hello, <%= current_user.email %> </p>
-  <%= link_to 'Logout', sessions_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'} %>
+  <p class="left"> Hello <%= current_user.email %> 
+  <p class="right">
+  <%= link_to 'Logout', sessions_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'} %> 
+  </p>
+
+  </p>
+  <h2 class="center-text">APP NAME</h2>
+  
 <% else %>
   
 <div>
