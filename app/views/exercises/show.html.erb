@@ -24,12 +24,14 @@ EZ wider
 
 <div class="re-size">
 	<video src="<%= @exercise.video %>" class="video-size" controls></video>
+			<br>
+	<div class="center-text">
+		Exercise Name: 	<%= @exercise.title %>
+			<br><br>
+		Notes: <%= @exercise.notes %>
+			<br><br><br><br>
+	</div>
 </div>
-
-<%#raise @exercise.inspect %>
-Exercise Name: 	<%= @exercise.title %>
-<br>
-Notes: <%= @exercise.notes %>
 
 
 

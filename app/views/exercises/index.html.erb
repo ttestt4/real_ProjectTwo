@@ -23,9 +23,11 @@
 	<p>
 		ID #:  <%= e.id %> &nbsp;&nbsp;&nbsp; 
 		<br>
-		
-	<video src="<%= e.video %>" controls></video>
 
+
+<div class="re-size">		
+	<video src="<%= e.video %>" class="video-size" controls></video>
+	<div class="center-text">
 		Exercise Name: 	<%= e.title %> &nbsp;&nbsp;&nbsp; 
 
    		<br>
@@ -38,7 +40,8 @@
 	<% end %>
 
 
-
+	</div>
+</div>
 
 
 
