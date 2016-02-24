@@ -17,15 +17,17 @@
 not sure if this view for show is important at all
 EZ wider
 <br><br>
+	<br>
+	yo sup
+	<br><br><br>
 
-<div>
-	<video src="<%= @exercise.video %>" controls></video>
+
+<div class="re-size">
+	<video src="<%= @exercise.video %>" class="video-size" controls></video>
 </div>
 
 <%#raise @exercise.inspect %>
 Exercise Name: 	<%= @exercise.title %>
-<br>
-Video String: <%= @exercise.video %>
 <br>
 Notes: <%= @exercise.notes %>
 
@@ -35,5 +37,7 @@ Notes: <%= @exercise.notes %>
 
 <%console%>
 <% end %>
+
+
 </body>
 </html>

@@ -17,6 +17,20 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.re-size {
+	background-color: red;
+	max-width: 855px;
+	max-height: 485px;
+}
+
+.video-size {
+	max-width: 855px;
+    max-height: 485px;
+    display: block;
+	margin: 0 auto;
+}
+
+
 
 
 

@@ -13,15 +13,12 @@
 
 
 
-All My Exercises
+Exercise View
 <br>
-<%#= Exercise.all.where(title: "HSPU") %>
 </h1>
 
-
-ALL EXERCISES BY CREATION DATE:
 <br><br>
-<p> Exercise Name &nbsp;&nbsp;&nbsp;&nbsp; || &nbsp;&nbsp;&nbsp;&nbsp; Workout Description</p>
+
 <% @user.workouts.order('date DESC').each do |w| %>
 <!-- @user.workouts.find_by_id(7).exercises -->
 <p>
@@ -30,7 +27,8 @@ ALL EXERCISES BY CREATION DATE:
  			<br>
 
    	<% w.exercises.each do |f| %>
-   	<%= f.title   %> <%= link_to 'Show Exercise', user_workout_exercise_path(params[:user_id], w.id, f.id) %>
+   	<%= f.title   %> 
+   	<%= link_to 'Show Exercise', user_workout_exercise_path(params[:user_id], w.id, f.id) %>
    	<br>
   
    <% end %>
@@ -43,7 +41,7 @@ ALL EXERCISES BY CREATION DATE:
 
 <% end %>
 
-<%= link_to 'Back To All Workouts', user_workouts_path %>
+<%= link_to 'Back To My Workouts', user_workouts_path %>
 
 <% console %>
 

@@ -14,9 +14,9 @@
    
    <h2>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<%= link_to 'Add New Workout', new_user_workout_path %>
+<%= link_to 'Add Workout', new_user_workout_path %>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<%= link_to 'All My Exercises', search_path %> 
+<%= link_to 'Exercise View', search_path %> 
 </h2>
 <br>
 <% @user.workouts.order('date DESC').each do |w| %>
