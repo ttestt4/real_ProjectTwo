@@ -9,24 +9,19 @@
    <p> You cannot view other users information </p>
 <% else %>
 <br><br>
-<%#= video_tag @exercise.video, :controls =>true %>
-<%#=video_tag(@exercise.video_url.to_s, size: "250x200", controls: true, autoplay: true, preload: "auto", :autobuffer => true)%>
 
-<script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script>
 
-<input type="filepicker" data-fp-apikey="AysFbrFv9RtOQ6HSKt0OFz"
-onchange="document.getElementById('exercise-video').src=event.fpfile.url;document.getElementById('pipeme').value=event.fpfile.url">
 
-<!-- document.getElementById('exercise-video').src=event.fpfile.url;console.log('src is ' + document.getElementById('exercise-video').src)) -->
-<!-- console.log(event.fpfile.url) -->
-
-<video id="exercise-video" src="" controls>
-</video>
 
 <br><br>
 not sure if this view for show is important at all
 EZ wider
 <br><br>
+
+<div>
+	<video src="<%= @exercise.video %>" controls></video>
+</div>
+
 <%#raise @exercise.inspect %>
 Exercise Name: 	<%= @exercise.title %>
 <br>
@@ -52,10 +47,19 @@ Notes: <%= @exercise.notes %>
 
 </div>
 
+<script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script>
 
-<div>
-	<video src="<%= @exercise.video %>" controls></video>
-</div>
+<input type="filepicker" data-fp-apikey="AysFbrFv9RtOQ6HSKt0OFz"
+onchange="document.getElementById('exercise-video').src=event.fpfile.url;document.getElementById('pipeme').value=event.fpfile.url">
+
+<!-- document.getElementById('exercise-video').src=event.fpfile.url;console.log('src is ' + document.getElementById('exercise-video').src)) -->
+<!-- console.log(event.fpfile.url) -->
+
+<video id="exercise-video" src="" controls>
+</video>
+
+
+
 
 
 

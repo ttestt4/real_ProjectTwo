@@ -1,5 +1,8 @@
 <h1>EDIT EXERCISE</h1>
 
+<div>
+	<video src="<%= @exercise.video %>" controls></video>
+</div>
 
 <div class="row">
 
@@ -17,7 +20,7 @@
 	
 	<div class="form-group">
 		<%=f.label :Video %>
-		<%=f.text_field :video, :class=>"form-control"%>
+		<%=f.text_field :video, :class=>"form-control", :id=>"pipeme"%>
 	</div>
 
 	<script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script>

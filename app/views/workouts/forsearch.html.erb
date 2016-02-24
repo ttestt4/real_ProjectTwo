@@ -28,8 +28,9 @@ ALL EXERCISES BY CREATION DATE:
 		
    	Workout: <%= w.description %>	<%= link_to 'Details', user_workout_exercises_path(params[:user_id], w.id) %>
  			<br>
+
    	<% w.exercises.each do |f| %>
-   	<%= f.title   %>
+   	<%= f.title   %> <%= link_to 'Show Exercise', user_workout_exercise_path(params[:user_id], w.id, f.id) %>
    	<br>
   
    <% end %>
