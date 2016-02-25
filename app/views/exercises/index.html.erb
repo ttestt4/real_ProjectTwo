@@ -35,7 +35,7 @@
    	<br>
    		<%= link_to 'Edit Exercise', edit_user_workout_exercise_path(params[:user_id], @workout.id, e.id), :class => "btn btn-info" %>
    		<%= link_to 'Delete Exercise', user_workout_exercise_path(params[:user_id], @workout.id, e.id), method: :delete, data: { confirm: 'Are you sure you permanently delete this exercise?'}, :class => "btn btn-danger" %>
-   	<br><br>
+   	<br><br><br><br><br><br>
 	</p> 
 	<% end %>
 
@@ -46,3 +46,5 @@
 
 
 <%end%>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
