@@ -9,19 +9,18 @@
    <p> You cannot view other users information </p>
 <% else %>
 
-<h1>
 
+<div class="col-md-4"></div>
 
-
-
+<div class="col-md-4">
 <h1><i>Exercise View</i></h1>
 
 
 <% @user.workouts.order('date DESC').each do |w| %>
 <!-- @user.workouts.find_by_id(7).exercises -->
-<h5>
+<h5 class="bigg-ed">
 		
-   	<strong style="font-size:20px"><%= w.description %></strong>	<%= link_to 'Details', user_workout_exercises_path(params[:user_id], w.id) %>
+   	<strong class="bigg-en"><%= w.description %></strong>	<%= link_to 'Details', user_workout_exercises_path(params[:user_id], w.id) %>
  			<br>
 
    	<% w.exercises.each do |f| %>
@@ -41,7 +40,7 @@
 <% end %>
 
 <%= link_to 'Back To My Workouts', user_workouts_path, :class => "btn btn-primary" %>
-
+</div>
 
 </body>
 </html>
