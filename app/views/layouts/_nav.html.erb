@@ -1,30 +1,37 @@
 
-<div class="container">
 
 
-<img src="http://previews.123rf.com/images/miluxian/miluxian1204/miluxian120400543/13386518-Rome-Italy-30-March-2012-Replica-of-the-famous-Vitruvian-Man-drawing-created-by-Leonardo-da-Vinci-Stock-Photo.jpg" class="img-responsive specify" alt="Responsive image" />
+
+<nav class="navbar navbar-fixed-bottom nav-b ">
+
+
+
+<div class="container " >
 
 
 <% if current_user %>
-  <p class="left"> Hello <%= current_user.email %> 
-  <p class="right">
+  <p class="left navbar-brand"> Hello <%= current_user.email %> 
+  <p class="right navbar-brand">
   <%= link_to 'Logout', sessions_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'} %> 
   </p>
 
   </p>
-  <h2 class="center-text">APP NAME</h2>
-  <h4 class="center-text"><i>An app to help fitness enthusiasts check and improve their form over time</i></h4>
+  
   
 <% else %>
   
 <div>
+<p class="navbar-brand">
   Please <%= link_to 'Login', login_form_path %>
+  </p>
 <br>
+<p class="navbar-brand">
   Or <%= link_to 'Sign Up', new_user_path %>
-
+</p>
   </div>
 <% end %>
 
 
 
 </div>
+</nav>
